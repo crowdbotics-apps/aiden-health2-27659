@@ -3,5 +3,5 @@ build:
     web: Dockerfile
 
 run:
-  web: CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/apache2/sites-available/000-default.conf && apache2 -D FOREGROUND 
+  web: sed -i -e 's/$PORT/'"$PORT"'/g' /etc/apache2/sites-available/000-default.conf && apache2 -D FOREGROUND 
   
