@@ -3,4 +3,4 @@ build:
     web: Dockerfile
 
 run:
-  web: apache2 -D FOREGROUND 
+  web: sed -i "s/80/$PORT/g" /etc/apache2/sites-enabled/000-default.conf /etc/apache2/ports.conf && apache2 -D FOREGROUND 
