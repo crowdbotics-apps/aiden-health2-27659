@@ -4,7 +4,8 @@ build:
 
 release:
    image: web
-   command: sed -i -e 's/$PORT/'"$PORT"'/g' /etc/apache2/sites-available/000-default.conf
+   command: 
+     - sed -i -e 's/$PORT/'"$PORT"'/g' /etc/apache2/sites-available/000-default.conf
 
 run:
   web: apache2 -D FOREGROUND
